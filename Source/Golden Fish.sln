@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Fish.Core", "Golden.Fish.Core\Golden.Fish.Core.csproj", "{FDFF61ED-FCBD-4377-B38E-92F86DC8A05B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Golden.Fish.Core", "Golden.Fish.Core\Golden.Fish.Core.csproj", "{FDFF61ED-FCBD-4377-B38E-92F86DC8A05B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Fish.Desktop", "Golden.Fish.Desktop\Golden.Fish.Desktop.csproj", "{69A25C48-B1EB-45BC-B739-EBD0D44CDA0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{273A3A61-7275-4A55-9BAA-27F812B4692F}"
+	ProjectSection(SolutionItems) = preProject
+		Golden Fish.sln.vsspell = Golden Fish.sln.vsspell
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golden.Fish.Rational", "Golden.Fish.Rational\Golden.Fish.Rational.csproj", "{C129A1C6-336B-4B31-99C6-4D40F4088916}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,14 @@ Global
 		{FDFF61ED-FCBD-4377-B38E-92F86DC8A05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDFF61ED-FCBD-4377-B38E-92F86DC8A05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDFF61ED-FCBD-4377-B38E-92F86DC8A05B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A25C48-B1EB-45BC-B739-EBD0D44CDA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A25C48-B1EB-45BC-B739-EBD0D44CDA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A25C48-B1EB-45BC-B739-EBD0D44CDA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A25C48-B1EB-45BC-B739-EBD0D44CDA0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C129A1C6-336B-4B31-99C6-4D40F4088916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C129A1C6-336B-4B31-99C6-4D40F4088916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C129A1C6-336B-4B31-99C6-4D40F4088916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C129A1C6-336B-4B31-99C6-4D40F4088916}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
