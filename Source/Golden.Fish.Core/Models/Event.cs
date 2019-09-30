@@ -9,5 +9,6 @@ namespace Golden.Fish.Core.Models
         public int Id { get; set; }
         public Valve Valve { get; set; }
         public string CronTime { get; set; }
+        public bool Enabled { get; set; }
     }
 }

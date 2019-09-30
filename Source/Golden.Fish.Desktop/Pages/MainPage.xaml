@@ -4,8 +4,39 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Golden.Fish.Desktop"
-             mc:Ignorable="d" >
-    <Grid Background="Red">
-            
+             xmlns:converters="clr-namespace:Golden.Fish.Desktop.ValueConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <local:BasePage.Resources>
+        <converters:CronExpressionValueConverter x:Key="CronExpressionValueConverter"/>
+    </local:BasePage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Items}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Enabled" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Margin="5, 0" IsChecked="{Binding Enabled}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Time" Width="400" 
+                                    DisplayMemberBinding="{Binding CronTime, Converter={StaticResource CronExpressionValueConverter}}" />
+                </GridView>
+            </ListView.View></ListView>
     </Grid>
 </local:BasePage>

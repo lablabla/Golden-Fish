@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CronExpressionDescriptor" Version="2.13.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Golden.Fish.Core\Golden.Fish.Core.csproj" />
     <ProjectReference Include="..\Golden.Fish.Rational\Golden.Fish.Rational.csproj" />
   </ItemGroup>

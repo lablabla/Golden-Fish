@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CronNET" Version="1.1.4939.24773" />
     <PackageReference Include="Dna.Framework" Version="1.0.7.15" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+    <PackageReference Include="Quartz" Version="3.0.7" />
   </ItemGroup>
 
 </Project>
