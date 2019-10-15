@@ -26,7 +26,7 @@ namespace Golden.Fish.Rational
             // Add client data store for easy access/use of the backing data store
             // Make it scoped so we can inject the scoped DbContext
             construction.Services.AddTransient<IClientDataStore>(
-                provider => new BaseClientDataStore(provider.GetService<ClientDataStoreDbContext>()));
+                provider => new FirebaseDataStore());
 
             // Return framework for chaining
             return construction;

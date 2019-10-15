@@ -54,6 +54,27 @@ namespace Golden.Fish.Desktop
 
             // Ensure the client data store 
             await ClientDataStore.EnsureDataStoreAsync();
+            //var valves = new List<Valve>()
+            //{
+            //    new Valve()
+            //    {
+            //        Name = "Meow1",
+            //        PinNumber = 10,
+            //        PinValue = true
+            //    },
+            //};
+
+            //var v = new List<Valve>()
+                
+                var v = new Valve()
+                {
+                    Name = "Meow2",
+                    PinNumber = 12,
+                    PinValue = false
+                };
+                //};
+            await ClientDataStore.SetValvesAsync(new List<Valve>() { v,v,v });
+
 
             ViewModelApplication.GoToPage(ApplicationPage.Main);
 

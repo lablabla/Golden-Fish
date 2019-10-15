@@ -1,4 +1,5 @@
-﻿using Golden.Fish.Core.Models;
+﻿using Golden.Fish.Core;
+using Golden.Fish.Core.Models;
 using Golden.Fish.Desktop.Models;
 using System.Collections.Generic;
 

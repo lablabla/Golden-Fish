@@ -9,6 +9,7 @@
   <InheritIgnoredWords>True</InheritIgnoredWords>
   <IgnoredWords>
     <Ignore>Dna</Ignore>
+    <Ignore>async</Ignore>
   </IgnoredWords>
   <InheritExclusionExpressions>True</InheritExclusionExpressions>
   <InheritIgnoredFilePatterns>True</InheritIgnoredFilePatterns>

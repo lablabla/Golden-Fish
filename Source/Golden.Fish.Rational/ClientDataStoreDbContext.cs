@@ -41,7 +41,6 @@ namespace Golden.Fish.Rational
             modelBuilder.Entity<Event>().HasKey(a => a.Id);
             modelBuilder.Entity<Event>().HasOne(v => v.Valve);
 
-            modelBuilder.Entity<Valve>().HasKey(a => a.Id);
         }
 
         #endregion

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Golden.Fish.Core.Models
 {
+    [Serializable]
     public class Event
     {
         public int Id { get; set; }

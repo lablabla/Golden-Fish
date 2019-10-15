@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\FireSharp\FireSharp.Core\FireSharp.Core.csproj" />
     <ProjectReference Include="..\Golden.Fish.Core\Golden.Fish.Core.csproj" />
   </ItemGroup>
 
