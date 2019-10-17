@@ -1,9 +1,9 @@
-﻿using Golden.Fish.Core.Models;
+﻿using Dna;
+using Golden.Fish.Core.Models;
 using Golden.Fish.Core.Services;
-using static Golden.Fish.Core.CoreDI;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using static Dna.FrameworkDI;
+using static Golden.Fish.Core.CoreDI;
 
 namespace Golden.Fish.Core
 {
@@ -22,7 +22,7 @@ namespace Golden.Fish.Core
 
         public int AddEvent(Event @event)
         {
-            return CronScheduler.AddJob<Event>(@event.CronTime, EventFunc, @event);
+            return CronScheduler.AddJob(@event.CronTime, EventFunc, @event);
         }
 
         public bool DeleteJob(Event @event)
@@ -32,6 +32,8 @@ namespace Golden.Fish.Core
 
         private void EventFunc(Event @event)
         {
+
+            Logger.LogDebugSource($"Fired function for event id {@event.Id}");
             // Todo:
             // Use IValveManager to toggle valve
         }
