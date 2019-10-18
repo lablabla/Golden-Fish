@@ -1,4 +1,5 @@
 using Golden.Fish.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -20,5 +21,9 @@ namespace Golden.Fish.Core.Services
         Task<IReadOnlyCollection<Event>> GetScheduledJobsAsync();
 
         Task SetScheduledJobsAsync(ICollection<Event> jobs);
+
+        event EventHandler JobsChanged;
+
+        event EventHandler ValvesChanged;
     }
 }

@@ -13,4 +13,10 @@
     <ProjectReference Include="..\Golden.Fish.Core\Golden.Fish.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="firebase_key.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Golden.Fish.Core.Models;
 using Golden.Fish.Core.Services;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,6 +15,9 @@ namespace Golden.Fish.Rational
         /// The database context for the client data store
         /// </summary>
         protected ClientDataStoreDbContext mDbContext;
+
+        public event EventHandler JobsChanged;
+        public event EventHandler ValvesChanged;
 
         #endregion
 
