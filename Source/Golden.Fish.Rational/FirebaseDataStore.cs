@@ -99,11 +99,13 @@ namespace Golden.Fish.Rational
         private void OnJobsChanged(object sender, ValueChangedEventArgs args, object context)
         {
             Logger.LogDebugSource($"Jobs Changed! {args.Data}");
+            JobsChanged?.Invoke(sender, args);
         }
 
         private void OnVavlesChanged(object sender, ValueChangedEventArgs args, object context)
         {
             Logger.LogDebugSource($"Valves Changed! {args.Data}");
+            ValvesChanged?.Invoke(sender, args);
         }
     }
 }
