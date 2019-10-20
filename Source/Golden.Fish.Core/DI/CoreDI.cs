@@ -12,11 +12,6 @@ namespace Golden.Fish.Core
         public static ITaskManager TaskManager => Framework.Service<ITaskManager>();
 
         /// <summary>
-        /// A shortcut to access the <see cref="ICronScheduler"/>
-        /// </summary>
-        public static ICronScheduler CronScheduler => Framework.Service<ICronScheduler>();
-
-        /// <summary>
         /// A shortcut to access the <see cref="IEventScheduler"/>
         /// </summary>
         public static IEventScheduler EventScheduler => Framework.Service<IEventScheduler>();
