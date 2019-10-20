@@ -22,8 +22,8 @@ namespace Golden.Fish.Desktop.ValueConverters
             // Find the appropriate page
             switch (page)
             {
-                case ApplicationPage.Main:
-                    return new MainPage(viewModel as MainViewModel);
+                case ApplicationPage.Server:
+                    return new ServerPage(viewModel as ServerViewModel);
 
                 //case ApplicationPage.ValvesSetup:
                 //    return new ValvesSettingPage(viewModel as ValveSettingViewModel);
@@ -42,9 +42,9 @@ namespace Golden.Fish.Desktop.ValueConverters
         public static ApplicationPage ToApplicationPage(this BasePage page)
         {
             // Find application page that matches the base page
-            if (page is MainPage)
+            if (page is ServerPage)
             {
-                return ApplicationPage.Main;
+                return ApplicationPage.Server;
             }
 
             //if (page is ValveSettingPage)

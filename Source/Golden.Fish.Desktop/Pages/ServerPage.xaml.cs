@@ -14,16 +14,16 @@ using System.Windows.Shapes;
 namespace Golden.Fish.Desktop
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for ServerPage.xaml
     /// </summary>
-    public partial class MainPage : BasePage<MainViewModel>
+    public partial class ServerPage : BasePage<ServerViewModel>
     {
         #region Constructor
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public MainPage() : base()
+        public ServerPage() : base()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace Golden.Fish.Desktop
         /// Constructor with specific view model
         /// </summary>
         /// <param name="specificViewModel">The specific view model to use for this page</param>
-        public MainPage(MainViewModel specificViewModel) : base(specificViewModel)
+        public ServerPage(ServerViewModel specificViewModel) : base(specificViewModel)
         {
             InitializeComponent();
         }

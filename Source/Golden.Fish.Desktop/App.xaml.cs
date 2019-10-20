@@ -56,7 +56,7 @@ namespace Golden.Fish.Desktop
             await ClientDataStore.EnsureDataStoreAsync();
 
 
-            ViewModelApplication.GoToPage(ApplicationPage.Main);
+            ViewModelApplication.GoToPage(ApplicationPage.Server);
 
             // Show the main window
             Current.MainWindow = new MainWindow();

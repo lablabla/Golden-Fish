@@ -6,8 +6,10 @@ namespace Golden.Fish.Core.Models
 {
     public enum ApplicationPage
     {
-        Main = 0,
+        Server = 0,
 
-        ValvesSetup = 1
+        Client = 1,
+
+        ValvesSetup = 2
     }
 }
