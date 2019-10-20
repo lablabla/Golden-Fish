@@ -35,10 +35,10 @@ namespace Golden.Fish.Desktop
             construction.Services.AddTransient<ITaskManager, BaseTaskManager>();
 
             // Add our CRON Scheduler
-            construction.Services.AddTransient<ICronScheduler, BaseCronScheduler>();
+            construction.Services.AddSingleton<ICronScheduler, BaseCronScheduler>();
 
             // Add our Event Scheduler
-            construction.Services.AddTransient<IEventScheduler, BaseEventScheduler>();
+            construction.Services.AddSingleton<IEventScheduler, BaseEventScheduler>();
 
             // Add our Valve Manager
             construction.Services.AddTransient<IValveManager, BaseValveManager>();
