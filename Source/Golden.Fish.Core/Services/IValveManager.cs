@@ -8,7 +8,8 @@ namespace Golden.Fish.Core.Services
 {
     public interface IValveManager
     {
-        public void SetupValve(Valve valve, int pinNum, bool isValueHigh = false);
+        public void SetupValve(Valve valve, bool isValueHigh = false);
         public void ToggleValve(Valve valve);
+        public void SetValveValue(Valve valve, bool newValue);
     }
 }

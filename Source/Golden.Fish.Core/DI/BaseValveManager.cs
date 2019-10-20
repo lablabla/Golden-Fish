@@ -13,12 +13,12 @@ namespace Golden.Fish.Core
 
         private Dictionary<Valve, int> mValves = new Dictionary<Valve, int>();
         
-        public void SetupValve(Valve valve, int pinNum, bool isValueHigh = false)
+        public void SetupValve(Valve valve, bool isValueHigh = false)
         {
             valve.PinValue = isValueHigh;
-            mGpioController.SetPinMode(pinNum, PinMode.Output);
-            mGpioController.Write(pinNum, valve.PinValue);
-            mValves[valve] = pinNum;
+            mGpioController.SetPinMode(valve.PinNumber, PinMode.Output);
+            mGpioController.Write(valve.PinNumber, valve.PinValue);
+            mValves[valve] = valve.PinNumber;
         }
 
         public void ToggleValve(Valve valve)
@@ -27,10 +27,20 @@ namespace Golden.Fish.Core
             {
                 throw new Exception("Valve was not setup");
             }
+            // TODO: Cleanup dictionary. pin number is part of the Valve object
             int pinNum = mValves[valve];
             bool currentValue = (bool)mGpioController.Read(pinNum);
             var newValue = !currentValue;
             mGpioController.Write(pinNum, newValue);
+        }
+
+        public void SetValveValue(Valve valve, bool newValue)
+        {
+            bool currentValue = (bool)mGpioController.Read(valve.PinNumber);
+            if (currentValue != newValue)
+            {
+                ToggleValve(valve);
+            }
         }
     }
 }
