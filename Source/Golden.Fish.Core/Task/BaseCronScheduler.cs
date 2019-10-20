@@ -73,6 +73,7 @@ namespace Golden.Fish.Core
 
         public async void Start()
         {
+            mKeys = new Dictionary<int, Tuple<JobKey, TriggerKey>>();
             await mQuartzzScheduler.Start();
         }
 

@@ -11,5 +11,6 @@ namespace Golden.Fish.Core.Models
         public Valve Valve { get; set; }
         public string CronTime { get; set; }
         public bool Enabled { get; set; }
+        public bool NextValue { get; set; }
     }
 }
