@@ -352,3 +352,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 Source/Golden.Fish.Rational/firebase_key.txt
+Source/Golden.Fish.Rational/golden_fish_firebase.json
