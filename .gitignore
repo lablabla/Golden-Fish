@@ -353,3 +353,6 @@ MigrationBackup/
 .ionide/
 Source/Golden.Fish.Rational/firebase_key.txt
 Source/Golden.Fish.Rational/golden_fish_firebase.json
+Python/configs/default.yml
+Python/.idea/
+Python/__pycache__/
