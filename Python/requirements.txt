@@ -1,0 +1,4 @@
+python-crontab
+numpy
+paho-mqtt
+pyyaml

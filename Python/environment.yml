@@ -1,0 +1,8 @@
+name: golden_fish
+channels:
+  - conda-forge
+dependencies:
+  - crontab
+  - numpy
+  - paho-mqtt
+  - pip
