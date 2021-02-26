@@ -1,4 +1,5 @@
-python-crontab
+gpiozero
 numpy
 paho-mqtt
+python-crontab
 pyyaml
