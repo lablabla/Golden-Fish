@@ -3,3 +3,4 @@ numpy
 paho-mqtt
 python-crontab
 pyyaml
+smbus
