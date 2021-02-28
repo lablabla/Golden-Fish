@@ -1,3 +1,4 @@
+from apscheduler.schedulers.background import BlockingScheduler
 from LCDManager import LCDManager
 import logging
 import os
@@ -12,7 +13,7 @@ class MqttClient(object):
     """
     Class wrapper around paho mqtt client
     """
-    def __init__(self, client_id: str, display: LCDManager=None, config_file: str ='configs/default.yml'):
+    def __init__(self, client_id: str, scheduler: BlockingScheduler, display: LCDManager=None, config_file: str ='configs/default.yml'):
 
         self.logger = utils.get_logger(__name__)
         self.logger.info('Initializing client')
@@ -27,7 +28,7 @@ class MqttClient(object):
         self.client.on_message = self.on_message
 
         self.client.connected_flag = False
-        self.connection_attempts = 0
+        self.scheduler = scheduler
         self.display = display
         self.topics = [
             'golden_fish/commands/#',
@@ -36,25 +37,14 @@ class MqttClient(object):
 
         self.on_valve_callback = None
         self.on_event_callback = None
-        self.get_satus_callback = None
+        self.get_status_callback = None
 
     def __del__(self):
         self.client.loop_stop()
 
     def connect(self):
-        try:
-            self.client.loop_start()
-            self.client.connect(host=self.config['hostname'], port=self.config['port'])
-            while not self.client.connected_flag:  # wait in loop
-                if self.connection_attempts > 2:
-                    raise RuntimeError("Too many failed connection attempts")
-                self.connection_attempts += 1
-                self.logger.debug("Trying to connect")
-                time.sleep(1)
-        except RuntimeError as ex:
-            self.logger.exception(ex)
-            return False
-        return True
+        self.client.connect(host=self.config['hostname'], port=self.config['port'])
+        self.client.loop_forever()
 
     def subscribe_to_topics(self):
         self.client.subscribe([(t, 2) for t in self.topics])
@@ -86,6 +76,6 @@ class MqttClient(object):
                     self.on_event_callback(levels[1], message)
             elif levels[0] == 'status':
                 if self.get_satus_callback is not None:
-                    status = self.get_satus_callback(levels[1], message)
+                    status = self.get_status_callback(levels[1], message)
                     # TODO: publish the status
 

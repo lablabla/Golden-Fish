@@ -1,3 +1,8 @@
+from apscheduler.schedulers.background import BlockingScheduler
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+import logging
+import threading
+
 from MqttClient import MqttClient
 from LCDManager import LCDManager
 from ValveManager import ValveManager, Valve
@@ -7,14 +12,13 @@ class Server(object):
     def __init__(self, client_id='GoldenFishPython'):
         self.display = LCDManager()
         self.valves_manager = ValveManager()
-        self.client = MqttClient(client_id=client_id, display=self.display)
-        self.is_running = self.client.connect()
-        if self.is_running:
-            self.display.clear_line(2)
-            self.display.write_line(1, "Connected to server")
-            self.display.write_line(3, "Running..")
-            self.display.set_backlight(False)
+        jobstores = {
+            'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')
+        }
+        logging.getLogger('apscheduler').setLevel(logging.DEBUG)
+        self.scheduler = BlockingScheduler(jobstores=jobstores)
+        self.client = MqttClient(client_id=client_id, scheduler=self.scheduler, display=self.display)
 
     def run(self):
-        while self.is_running:
-            pass
+        threading.Thread(target=self.client.connect).start()
+        self.scheduler.start()  # This will block indefinitely

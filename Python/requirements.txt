@@ -1,6 +1,8 @@
+apscheduler
 gpiozero
 numpy
 paho-mqtt
 python-crontab
 pyyaml
 smbus
+SQLAlchemy
